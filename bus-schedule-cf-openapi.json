@@ -1,0 +1,88 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger Db2 WA Extensions",
+    "description": "This is a Swagger Connecting WA to a Db2 using Cloud Function",
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "https://us-south.functions.appdomain.cloud",
+      "description": "Dallas, USA"
+    }
+  ],
+  "paths": {
+    "/api/v1/web/d57ceb07-676b-4fc0-87fe-380dbe0e8b7e/default/mvp-10-db2-query.json": {
+      "post": {
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "query",
+            "required": true,
+            "description": "A unique identifier representing the cloud function namespace.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Get bus info",
+        "description": "Get bus scheduled time from Db2",
+        "operationId": "getBusInfo",
+        "requestBody": {
+          "description": "Payload to get bus scheduled time by means of Cloud Function.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertItem"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusOutput"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "InsertItem": {
+        "type": "object",
+        "properties": {
+          "bus_route": {
+            "type": "integer",
+            "description": "bus route input"
+          },
+          "bus_stop": {
+            "type": "string",
+            "description": "bus stop input"
+          }
+        }
+      },
+      "StatusOutput": {
+        "type": "object",
+        "properties": {
+          "bus_message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
