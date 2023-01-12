@@ -1,0 +1,18 @@
+CREATE TABLE BUS_SCHEDULE (
+  BUS_ROUTE INT,
+  BUS_STOP VARCHAR(255),
+  SCHEDULED_ARRIVAL_TIME TIME
+);
+
+INSERT INTO BUS_SCHEDULE 
+    (BUS_ROUTE, BUS_STOP, SCHEDULED_ARRIVAL_TIME) 
+VALUES 
+    (19,'seventh street and bryant street', '16:19:00'),
+    (19,'seventh street and folsom street', '16:27:00'),
+    (19,'market street and hyde street', '16:33:00'),
+    (49,'city college terminal', '16:08:00'),
+    (49,'mission street and thirtieth street', '16:12:00'),
+    (49,'seventh street and fourteenth street', '16:15:00'),
+    (7,'haight street and filmore street', '16:45:00'),
+    (7,'market street and nineth street', '16:52:00'),
+    (7,'market street and third street', '17:08:00');
