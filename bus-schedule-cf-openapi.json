@@ -18,8 +18,7 @@
     "paths": {
       "/api/v1/web/d57ceb07-676b-4fc0-87fe-380dbe0e8b7e/default/mvp-10-db2-query.json": {
         "post": {
-          "parameters": [
-          ],
+          "parameters": [],
           "summary": "Get bus info",
           "description": "Get bus scheduled time from Db2",
           "operationId": "getBusInfo",
